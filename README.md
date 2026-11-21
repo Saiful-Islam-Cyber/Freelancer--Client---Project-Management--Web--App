@@ -32,11 +32,11 @@ A web application built with Python, Flask, and SQLite to help freelancers manag
 
 ## Installation and Run Steps
 
-1. **Clone the repository:**
+1. 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
-   cd Freelancer-Client-Project-Management-Web-App
-   ```
+   git clone https://github.com/Saiful-Islam-Cyber/Freelancer--Client---Project-Management--Web--App.git
+   cd Freelancer--Client---Project-Management--Web--App
+
 
 2. **Install dependencies:**
    ```bash
