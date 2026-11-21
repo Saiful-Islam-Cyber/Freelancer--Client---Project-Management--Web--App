@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Project</h2>
+<form method="POST">
+    <p>Title: <input type="text" name="title" value="{{ project.title }}" required></p>
+    <p>Client: 
+        <select name="client_id">
+            {% for c in clients %}
+                <option value="{{ c.id }}" {% if c.id == project.client_id %}selected{% endif %}>{{ c.name }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>Budget ($): <input type="number" step="0.01" name="budget" value="{{ project.budget }}" required></p>
+    <p>Deadline: <input type="date" name="deadline" value="{{ project.deadline }}" required></p>
+    <p>Status: 
+        <select name="status">
+            <option value="Pending" {% if project.status == 'Pending' %}selected{% endif %}>Pending</option>
+            <option value="In Progress" {% if project.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+            <option value="Completed" {% if project.status == 'Completed' %}selected{% endif %}>Completed</option>
+        </select>
+    </p>
+    <p><label><input type="checkbox" name="is_paid" {% if project.is_paid %}checked{% endif %}> Paid</label></p>
+    <button type="submit">Save Changes</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
