@@ -1,32 +1,41 @@
-# FreelanceTrack – Client & Project Management Web App
+# FreelanceTrack - Client & Project Management Web App
 
-A lightweight web application built with **Python**, **Flask**, and **SQLite** to help freelancers manage clients, track project budgets, monitor deadlines, and calculate completed revenue.
+A web application built with Python, Flask, and SQLite to help freelancers manage clients, track project deadlines and budgets, monitor payment status, and calculate total revenue.
 
 ## Features
-- **Dashboard Overview:** Live metrics showing total clients, total projects, completed projects, total project value, and completed value.
-- **Client Management (CRUD):** Add, view, edit, and delete client profiles.
-- **Project Management (CRUD):** Create projects linked to clients, set deadlines and budgets, track status (`Pending`, `In Progress`, `Completed`), and mark payments (`Paid`/`Unpaid`).
-- **Search & Status Filtering:** Search projects by title or client name and filter by project status.
-- **Input Validation:** Server-side validation with clear user feedback messages for missing fields or invalid numbers.
-- **CSV Export (Bonus):** Download a formatted CSV report of all projects and payment statuses.
+- **Dashboard Overview:** Shows total clients, total projects, completed projects, total project value, and completed project value.
+- **Client Management:** Add, view, edit, and delete client profiles.
+- **Project Management:** Create projects linked to specific clients, set budgets and deadlines, update status (`Pending`, `In Progress`, `Completed`), and mark payments (`Paid` or `Unpaid`).
+- **Search & Status Filter:** Search projects by title or client name, or filter projects by status.
+- **Input Validation:** Validates required fields and budget amounts with clear error messages.
+- **CSV Report Export:** Download all project records as a `.csv` file.
+
+## Project Files
+- `app.py` - Main Flask application and routes
+- `database.py` - SQLite database connection, table creation, and dashboard statistics queries
+- `tracker.db` - SQLite database file containing sample clients and projects
+- `templates/` - HTML templates (`base.html`, `index.html`, `clients.html`, `edit_client.html`, `edit_project.html`)
+- `static/style.css` - Custom CSS styling
+- `screenshots/` - Application screenshots
+- `requirements.txt` - Python dependencies
 
 ## Screenshots
-### Dashboard & Metrics
+
+### Dashboard Overview
 ![Dashboard Overview](screenshots/dashboard.png)
 
-### Projects List & Filters
+### Projects List
 ![Projects List](screenshots/projects_list.png)
 
-## Tech Stack
-- **Backend:** Python 3, Flask
-- **Database:** SQLite3 (`sqlite3` standard library)
-- **Frontend:** HTML5, Jinja2 Templates, Custom CSS
+### Clients Management
+![Clients Management](screenshots/clients_list.png)
 
-## Installation & Setup
+## Installation and Run Steps
+
 1. **Clone the repository:**
    ```bash
-   git clone <your-github-repo-url>
-   cd <your-project-folder>
+   git clone https://github.com
+   cd Freelancer-Client-Project-Management-Web-App
    ```
 
 2. **Install dependencies:**
@@ -34,12 +43,14 @@ A lightweight web application built with **Python**, **Flask**, and **SQLite** t
    pip install -r requirements.txt
    ```
 
-3. **Database Setup:**
-   - The repository includes a pre-populated `tracker.db` SQLite database with sample clients and projects.
-   - If `tracker.db` is deleted, running `app.py` automatically runs `init_db()` in `database.py` to recreate the `clients` and `projects` tables.
+3. **Database setup:**
+   - The `tracker.db` file is included in the repository with sample records.
+   - To start with a blank database, delete `tracker.db` and run `app.py`—it will automatically generate a new database and tables.
 
 4. **Run the application:**
    ```bash
    python app.py
    ```
    Open `http://127.0.0.1:5000` in your browser.
+
+
