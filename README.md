@@ -59,4 +59,11 @@ A web application built with Python, Flask, and SQLite to help freelancers organ
 ### Projects List
 ![Projects List](screenshots/projects_list.png)
 
+## Project Demo
+
+Watch the full walkthrough of the Freelancer Client & Project Management Web App:
+[Click here to watch the Demo Video](https://docs.google.com/videos/d/1GC9Nci01Y7Uc3GDiJMms5y0-LmMax63uy8mLR-tWDuI/play?usp=sharing)
+
+
+
 
