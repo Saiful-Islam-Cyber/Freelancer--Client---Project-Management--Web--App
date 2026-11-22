@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, Res
 from database import get_db_connection, init_db, get_dashboard_stats
 
 app = Flask(__name__)
-app.secret_key = "freelance_secret_key_change_me"
+app.secret_key = "saiful_freelance_tracker_2026"
 
 # Initialize tables on startup
 init_db()
@@ -94,7 +94,7 @@ def edit_project(project_id):
         status = request.form.get("status")
         is_paid = 1 if request.form.get("is_paid") == "on" else 0
 
-        if not title or not budget or not deadline:
+        if not title or not client_id or not budget or not deadline:
             flash("Please fill out all required fields.", "error")
         else:
             try:
@@ -191,7 +191,7 @@ def delete_client(client_id):
     flash("Client and their associated projects deleted.", "success")
     return redirect(url_for("clients"))
 
-# --- BONUS: CSV REPORT DOWNLOAD ---
+# --- CSV REPORT EXPORT ---
 
 @app.route("/export/csv")
 def export_csv():
@@ -219,3 +219,4 @@ def export_csv():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
